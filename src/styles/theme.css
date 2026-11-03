@@ -1,0 +1,140 @@
+/* Tema GameStore sobre Bootstrap 5 (modo oscuro). Misma paleta y tipografía
+   que la versión HTML: ink azulado, acento magenta y cian. */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root,
+[data-bs-theme='dark'] {
+  --gs-bg: #14171f;
+  --gs-panel: #1b2030;
+  --gs-panel-alt: #232940;
+  --gs-border: #2a3049;
+  --gs-muted: #9096ac;
+  --gs-accent: #ff3d81;
+  --gs-accent-2: #4fd8ea;
+  --gs-font-display: 'Rajdhani', sans-serif;
+
+  --bs-body-bg: var(--gs-bg);
+  --bs-body-color: #f3f1ea;
+  --bs-body-font-family: 'Work Sans', system-ui, sans-serif;
+  --bs-secondary-color: var(--gs-muted);
+  --bs-border-color: var(--gs-border);
+  --bs-link-color: var(--gs-accent-2);
+  --bs-link-hover-color: #8be6f2;
+  --bs-link-color-rgb: 79, 216, 234;
+  --bs-link-hover-color-rgb: 139, 230, 242;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand { font-family: var(--gs-font-display); font-weight: 700; letter-spacing: 0.01em; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.text-secondary { color: var(--gs-muted) !important; }
+
+/* Botones con el acento de la marca */
+.btn-primary {
+  --bs-btn-bg: var(--gs-accent);
+  --bs-btn-border-color: var(--gs-accent);
+  --bs-btn-color: #14121a;
+  --bs-btn-hover-bg: #ff5c94;
+  --bs-btn-hover-border-color: #ff5c94;
+  --bs-btn-hover-color: #14121a;
+  --bs-btn-active-bg: #e0346f;
+  --bs-btn-active-border-color: #e0346f;
+  --bs-btn-active-color: #14121a;
+  --bs-btn-disabled-bg: var(--gs-accent);
+  --bs-btn-disabled-border-color: var(--gs-accent);
+  --bs-btn-disabled-color: #14121a;
+  font-family: var(--gs-font-display);
+  font-weight: 700;
+}
+.btn-outline-info { --bs-btn-color: var(--gs-accent-2); --bs-btn-border-color: var(--gs-accent-2); --bs-btn-hover-bg: var(--gs-accent-2); --bs-btn-hover-color: #14121a; }
+.form-check-input:checked { background-color: var(--gs-accent); border-color: var(--gs-accent); }
+.form-control, .form-select { background-color: var(--gs-bg); border-color: var(--gs-border); }
+.form-control:focus, .form-select:focus { background-color: var(--gs-bg); border-color: var(--gs-accent-2); box-shadow: 0 0 0 0.2rem rgba(79, 216, 234, 0.2); }
+
+.section-title { font-size: 1.9rem; margin-bottom: 1.5rem; }
+
+/* ---------- Navbar tienda ---------- */
+.store-navbar { background: rgba(20, 23, 31, 0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gs-border); }
+.store-navbar .navbar-brand { font-size: 1.35rem; }
+.store-navbar .nav-link { color: var(--gs-muted); }
+.store-navbar .nav-link:hover, .store-navbar .nav-link.active { color: #fff; }
+.store-navbar .btn-link.nav-link { border: 0; text-align: left; }
+.cart-link .badge { vertical-align: middle; }
+
+/* ---------- Hero ---------- */
+.hero-section { padding: 3.5rem 0 2rem; }
+.hero-title { font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.05; margin-bottom: 1rem; }
+.hero-title span { color: var(--gs-accent); }
+.hero-carousel { border-radius: 14px; overflow: hidden; border: 1px solid var(--gs-border); background: var(--gs-panel); }
+.hero-slide { height: clamp(260px, 42vw, 440px); object-fit: cover; }
+.hero-caption { background: linear-gradient(transparent, rgba(10, 12, 18, 0.85)); left: 0; right: 0; bottom: 0; padding-top: 3rem; }
+.hero-caption h3 { margin: 0; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+
+/* ---------- Tarjetas de producto ---------- */
+.product-card { background: var(--gs-panel); border-color: var(--gs-border); overflow: hidden; transition: transform 0.15s ease, border-color 0.15s ease; }
+.product-card:hover { transform: translateY(-3px); border-color: var(--gs-accent-2); }
+.product-cover { display: block; aspect-ratio: 3 / 4; background: var(--gs-panel-alt); }
+.product-cover img { width: 100%; height: 100%; object-fit: cover; }
+.product-cover-empty { display: flex; align-items: center; justify-content: center; height: 100%; min-height: 160px; color: var(--gs-muted); }
+.product-title { font-size: 1.05rem; margin: 0; }
+.product-title a { color: inherit; }
+.platform-tag { align-self: flex-start; display: inline-block; font-size: 0.72rem; font-weight: 600; color: var(--gs-accent-2); border: 1px solid var(--gs-accent-2); padding: 2px 10px; border-radius: 999px; }
+.price-tag { font-weight: 700; }
+.price-free { color: #7be495; }
+.detail-cover { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; background: var(--gs-panel-alt); }
+.detail-price { font-family: var(--gs-font-display); font-size: 2rem; }
+
+/* ---------- Filtros ---------- */
+.filter-panel, .summary-card, .form-panel { background: var(--gs-panel); border: 1px solid var(--gs-border); border-radius: 12px; }
+.filter-panel { padding: 1.25rem; }
+@media (min-width: 992px) { .filter-panel { position: sticky; top: 90px; } }
+
+/* ---------- Carrito ---------- */
+.cart-line { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--gs-border); flex-wrap: wrap; }
+.cart-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; background: var(--gs-panel-alt); }
+.qty-control { display: flex; align-items: center; gap: 0.6rem; }
+.cart-subtotal { min-width: 100px; }
+
+/* ---------- Formularios ---------- */
+.auth-wrap { max-width: 460px; }
+.auth-wrap.auth-wide { max-width: 700px; }
+.form-panel { padding: 1.75rem; }
+.form-panel.form-wide { max-width: 700px; }
+
+/* ---------- Contenido ---------- */
+.prose { max-width: 780px; }
+.prose p { color: #cfd2de; line-height: 1.7; }
+.map-frame { margin-top: 1rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--gs-border); }
+.blog-card { background: var(--gs-panel); border: 1px solid var(--gs-border); border-radius: 12px; overflow: hidden; }
+.blog-card-img { width: 100%; height: 100%; min-height: 200px; object-fit: cover; display: block; }
+.blog-hero-img { width: 100%; max-height: 320px; object-fit: cover; border-radius: 12px; }
+
+/* ---------- Footer ---------- */
+.store-footer { border-top: 1px solid var(--gs-border); }
+.footer-brand { font-family: var(--gs-font-display); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+.footer-title { font-size: 0.9rem; color: var(--gs-muted); }
+.store-footer li { margin-bottom: 0.4rem; }
+.store-footer li a { color: var(--gs-muted); }
+.store-footer li a:hover { color: #fff; }
+.footer-base { border-top: 1px solid var(--gs-border); color: var(--gs-muted); font-size: 0.82rem; }
+
+/* ---------- Admin ---------- */
+.admin-shell { min-height: 100vh; display: block; }
+@media (min-width: 992px) { .admin-shell { display: grid; grid-template-columns: 240px 1fr; } }
+.admin-sidebar { background: var(--gs-panel); border-right: 1px solid var(--gs-border); padding: 1.5rem 1rem; position: sticky; top: 0; height: 100vh; }
+.admin-brand { font-family: var(--gs-font-display); font-weight: 700; font-size: 1.2rem; padding: 0 0.5rem 1.25rem; }
+.admin-topbar { background: var(--gs-panel); border-bottom: 1px solid var(--gs-border); }
+.admin-offcanvas { background: var(--gs-panel); }
+.admin-menu .nav-link { color: var(--gs-muted); border-radius: 8px; padding: 0.55rem 0.75rem; }
+.admin-menu .nav-link:hover, .admin-menu .nav-link.active { background: var(--gs-panel-alt); color: #fff; }
+.admin-user .btn-link { color: var(--gs-accent-2); }
+.admin-main { padding: 1.5rem 1rem 3rem; min-width: 0; }
+@media (min-width: 992px) { .admin-main { padding: 2rem 2.5rem 3rem; } }
+.admin-title { font-size: 1.7rem; margin-bottom: 1.25rem; }
+.admin-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; }
+.admin-search { max-width: 420px; }
+.table-panel { background: var(--gs-panel); border: 1px solid var(--gs-border); border-radius: 12px; overflow: hidden; }
+.table-panel .table { --bs-table-bg: transparent; margin-bottom: 0; }
+.metric-card { background: var(--gs-panel); border-color: var(--gs-border); }
+.metric-value { font-family: var(--gs-font-display); font-size: 2.2rem; font-weight: 700; line-height: 1.1; }
+.role-badge { font-size: 0.75rem; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--gs-border); color: var(--gs-muted); }
